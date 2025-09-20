@@ -77,6 +77,16 @@
             left: 0;
             right: 0;
             margin: 0 auto;
+
+            @media screen and (max-width:991px) {
+                top: -8%;
+            }
+
+            @media screen and (max-width:767px) {
+                width: 80px;
+                height: 80px;
+                top: -12%;
+            }
         }
     }
 }

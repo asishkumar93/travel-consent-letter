@@ -216,6 +216,12 @@
                         background-size: contain;
                     }
                 }
+
+                &.close {
+                    &::after {
+                        background-image: url("../../../assets/img/icons/x.svg");
+                    }
+                }
             }
         }
 
