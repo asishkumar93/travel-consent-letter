@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
     <link href="/assets/css/app.min.css" rel="stylesheet" />
 
-    <title>Home</title>
+    <title>Consent Letter</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav_item">
-                        <a href="javascript:" class="nav_link">
+                        <a href="../contact-us.html" class="nav_link">
                             Contact us
                         </a>
                     </li>
@@ -379,7 +379,7 @@
                                                 <div class="contents">
                                                     <div class="tag">Standard</div>
                                                     <h2>CA $9.95</h2>
-                                                    <p>CA $9.95</p>
+                                                    <p>Receive your letter in PDF format</p>
                                                     <ol class="order_list">
                                                         <li>Receive your completed affidavit in PDF format</li>
                                                         <li>Personalisation level: Standard
@@ -436,12 +436,12 @@
 
             <ul class="footer_nav_list">
                 <li>
-                    <a href="javascript:">
+                    <a href="../index.html">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:">
+                    <a href="../create-consent-letter.html">
                         Create consent letter
                     </a>
                 </li>
@@ -451,7 +451,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:">
+                    <a href="../contact-us.html">
                         Contact us
                     </a>
                 </li>
@@ -551,15 +551,19 @@
         radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 toggleDivs.forEach(div => {
-                    if (radio.value === 'yes') {
-                        div.classList.add('hide');
-                    } else {
-                        div.classList.remove('hide');
-                    }
+                    const inputs = div.querySelectorAll('input, select, textarea'); // catch all form fields
+                    inputs.forEach(input => {
+                        if (radio.value === 'yes') {
+                            input.setAttribute('disabled', true);   // disable
+                        } else {
+                            input.removeAttribute('disabled');      // enable
+                        }
+                    });
                 });
             });
         });
     </script>
+
 
 </body>
 

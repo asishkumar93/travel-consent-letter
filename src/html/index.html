@@ -383,7 +383,7 @@
                         <div class="contents">
                           <div class="tag">Standard</div>
                           <h2>CA $9.95</h2>
-                          <p>CA $9.95</p>
+                          <p>Receive your letter in PDF format</p>
                           <ol class="order_list">
                             <li>Receive your completed affidavit in PDF format</li>
                             <li>Personalisation level: Standard
@@ -650,11 +650,14 @@
     radios.forEach(radio => {
       radio.addEventListener('change', () => {
         toggleDivs.forEach(div => {
-          if (radio.value === 'yes') {
-            div.classList.add('hide');
-          } else {
-            div.classList.remove('hide');
-          }
+          const inputs = div.querySelectorAll('input, select, textarea'); // catch all form fields
+          inputs.forEach(input => {
+            if (radio.value === 'yes') {
+              input.setAttribute('disabled', true);   // disable
+            } else {
+              input.removeAttribute('disabled');      // enable
+            }
+          });
         });
       });
     });

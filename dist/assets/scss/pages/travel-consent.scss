@@ -202,7 +202,7 @@
                         text-align: center;
 
                         &::after {
-                            right: 38%;
+                            right: 36%;
                         }
                     }
 
@@ -225,14 +225,10 @@
             }
 
             .optionalFields {
-                &.hide {
-                    visibility: hidden;
-                    opacity: 0;
-
-                    @media screen and (max-width:767px) {
-                        display: none;
-                    }
-                }
+              input:disabled {
+                background: #c3c3c3;
+                border: 1px solid #c3c3c3;
+              }
             }
         }
 
