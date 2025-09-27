@@ -146,3 +146,57 @@ button {
     }
   }
 }
+
+// Form Breadcrum 
+.breadcrum_list {
+  margin-bottom: 32px;
+
+  li {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    color: #616F86;
+    margin-right: 18px;
+
+    &::after {
+      content: "/";
+      color: #616F86;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -13px;
+      margin: auto 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+
+      img {
+        width: 14px;
+        height: 14px;
+        transform: rotate(180deg);
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 130%;
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

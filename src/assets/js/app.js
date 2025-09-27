@@ -82,3 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+const dobInput = document.getElementById("childDob");
+
+dobInput.addEventListener("input", (e) => {
+  let value = e.target.value.replace(/\D/g, ""); // only numbers
+  if (value.length > 2 && value.length <= 4) {
+    value = value.slice(0, 2) + "/" + value.slice(2);
+  } else if (value.length > 4) {
+    value =
+      value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4, 8);
+  }
+  e.target.value = value;
+});

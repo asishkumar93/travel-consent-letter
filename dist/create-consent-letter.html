@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../assets/img/favicon.svg" />
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
+    <link href="/assets/css/app.min.css" rel="stylesheet" />
+
+    <title>Home</title>
+</head>
+
+<body>
+    <main id="main-scroll">
+        <header class="header__wrapper">
+    <div class="container">
+        <nav class="navbar_main_wrap">
+            <div class="navbar_flex">
+                <a href="../index.html" class="brand">
+                    <img src="../../assets/img/icons/brand.svg" alt="" />
+                    <span>Travel consent letter</span>
+                </a>
+
+                <ul class="nav_list_main" id="humbugerMenu">
+                    <li class="nav_item">
+                        <a href="../index.html" class="nav_link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="../create-consent-letter.html" class="nav_link">
+                            Create consent letter
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="javascript:" class="nav_link">
+                            Contact us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="action_wrap">
+                <div class="language_dropdown">
+                    <button class="lang_btn" id="langToggle">
+                        <img src="../../assets/img/icons/country.svg" class="flag" alt="US Flag" />
+                        <span id="selectedLang">Canada</span>
+                    </button>
+                    <ul class="lang_menu" id="langMenu">
+                        <li data-code="Canada" data-flag="../../assets/img/icons/flag/america.svg">
+                            <img src="../../assets/img/icons/country.svg" class="flag" alt="English" />
+                            Canada
+                        </li>
+                        <li data-code=" 中國人" data-flag="../../assets/img/icons/flag/china.svg">
+                            <img src="../../assets/img/icons/flag/china.svg" class="flag" alt="Chinese" />
+                            中國人
+                        </li>
+                        <li data-code="Español" data-flag="../../assets/img/icons/flag/spanish.svg">
+                            <img src="../../assets/img/icons/flag/spanish.svg" class="flag" alt="Español" />
+                            Español
+                        </li>
+                        <li data-code="日本語" data-flag="../../assets/img/icons/flag/japan.svg">
+                            <img src="../../assets/img/icons/flag/japan.svg" class="flag" alt="Japanese" />
+                            日本語
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="humbuger" id="humguberBtn"></button>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+        <section class="travel__consent__wrapper">
+            <div class="container">
+                <h2 class="title40 text-start">Let’s create your child’s <br />
+                    travel consent letter</h2>
+
+                <!--Child Consent form-->
+                <div class="consent_main_wrap">
+                    <ul class="step_list_wrap">
+                        <li class="done">
+                            <div class="circle"></div>
+                            <div class="text">Parents or Legal guardians</div>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <div class="text">Travelling Child</div>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <div class="text">Accompanying Person</div>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <div class="text">Contact info</div>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <div class="text">Final step</div>
+                        </li>
+                    </ul>
+
+                    <div class="steps_group_main_wrap">
+                        <ul class="breadcrum_list" id="breadcrumb">
+                            <li>
+                                <a href="javascript:" id="backBtn">
+                                    <img src="../assets/img/icons/arrow-dark.svg" alt="" />
+                                    <span>Go back</span>
+                                </a>
+                            </li>
+                            <li id="prevStepName"></li>
+                        </ul>
+                        <form action="">
+                            <!-- Parents or Legal guardians -->
+                            <div class="steps">
+                                <div class="fields_flex">
+                                    <div class="fields_group">
+                                        <label for="">1. Is the child travelling with</label>
+                                        <div class="radio_toggle_wrap">
+                                            <label class="radio_toggle">
+                                                <span class="labelText">(i) One parent</span>
+                                                <input type="radio" name="parent-option" value="one-parent">
+                                                <span class="switch"></span>
+                                            </label>
+
+                                            <label class="radio_toggle">
+                                                <span class="labelText">(ii) No parent</span>
+                                                <input type="radio" name="parent-option" value="no-parent">
+                                                <span class="switch"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">2. Name of the first parent / legal guardian giving the
+                                            authority?</label>
+                                        <input type="text" name="firstParrent" id="firstParrent" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">3. Name of the second parent / legal guardian giving the authority
+                                            (if
+                                            applicable)</label>
+                                        <input type="text" name="secondParrent" id="secondParrent" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">4. Fill parent’s full address</label>
+                                        <input type="text" name="address" id="address" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">5. Parent contact telephone number</label>
+                                        <input type="text" name="telephone" id="telephone" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">6. Parent contact email address</label>
+                                        <input type="text" name="parentEmail" id="parentEmail" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Travelling Child -->
+                            <div class="steps">
+                                <div class="fields_flex">
+                                    <div class="fields_group">
+                                        <label for="">1. Child’s full name</label>
+                                        <input type="text" name="childName" id="childName" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">2. Child’s birth date</label>
+                                        <input type="text" name="childDob" id="childDob" class="fieldControl"
+                                            placeholder="DD/MM/YYYY">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">3. Child’s city and country of birth</label>
+                                        <input type="text" name="cityCountry" id="cityCountry" class="fieldControl"
+                                            placeholder="Bangalore,India">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">4. Child’s passport number</label>
+                                        <input type="text" name="passport" id="passport" class="fieldControl"
+                                            placeholder="AASDAS98423">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">5. Issue date of child’s passport</label>
+                                        <input type="text" name="issueDate" id="issueDate" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">6. Province / territory where Child’s birth certificate was
+                                            issued</label>
+                                        <input type="text" name="birthCertificate" id="birthCertificate"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">7. Child’s birth certificate number</label>
+                                        <input type="text" name="birthCertificateNumber" id="birthCertificateNumber"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">8. Country where child’s passport was issued</label>
+                                        <input type="text" name="countryPassportIssue" id="countryPassportIssue"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accompanying Person -->
+                            <div class="steps">
+                                <div class="fields_flex">
+                                    <div class="fields_group">
+                                        <label for="">1. Is Child travelling alone?</label>
+                                        <div class="radio_toggle_wrap">
+                                            <label class="radio_toggle">
+                                                <span class="labelText">(i) Yes</span>
+                                                <input type="radio" name="travelling-option" value="yes">
+                                                <span class="switch"></span>
+                                            </label>
+
+                                            <label class="radio_toggle">
+                                                <span class="labelText">(ii) No</span>
+                                                <input type="radio" name="travelling-option" value="no">
+                                                <span class="switch"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">2. Full name of person accompanying the child</label>
+                                        <input type="text" name="personName" id="personName" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">3. What is the relationship between the child and the accompanying
+                                            person?</label>
+                                        <input type="text" name="relationship" id="relationship" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">4. Passport number of the accompanying person?</label>
+                                        <input type="text" name="accompanyingPerson" id="accompanyingPerson"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">5. Issue date of the accompanying person’s passport</label>
+                                        <input type="text" name="issueDateAccompanyingPerson"
+                                            id="issueDateAccompanyingPerson" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">6. Issuing authority of the accompanying person’s birth
+                                            certificate</label>
+                                        <input type="text" name="accompanyingPersonBirthCertificate"
+                                            id="accompanyingPersonBirthCertificate" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group optionalFields">
+                                        <label for="">7. Accompanying person’s birth certificate number</label>
+                                        <input type="text" name="accompanyingPersonBirthCertificateNumber"
+                                            id="accompanyingPersonBirthCertificateNumber" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact info -->
+                            <div class="steps">
+                                <div class="fields_flex">
+                                    <div class="fields_group">
+                                        <label for="">1. Name of destination country</label>
+                                        <input type="text" name="destinationCountry" id="destinationCountry"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">2. Date of departure</label>
+                                        <input type="text" name="departureDate" id="departureDate" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">3. Date of return</label>
+                                        <input type="text" name="returnDate" id="returnDate" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">4. Name of person child is staying with</label>
+                                        <input type="text" name="personChildStaying" id="personChildStaying"
+                                            class="fieldControl" placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">5. Full address of stay:</label>
+                                        <input type="text" name="fullAddress" id="fullAddress" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">6. Contact telephone number</label>
+                                        <input type="text" name="contactNumber" id="contactNumber" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+
+                                    <div class="fields_group">
+                                        <label for="">6. Contact email address</label>
+                                        <input type="text" name="contactEmail" id="contactEmail" class="fieldControl"
+                                            placeholder="Need content">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Final step -->
+                            <div class="steps">
+                                <div class="fields_flex">
+                                    <div class="fields_group">
+                                        <label for="">1. Select the languages you want the letter to be in</label>
+
+                                        <div class="custom_checkbox">
+                                            <label>
+                                                <input type="checkbox" name="lang" value="en">
+                                                <span class="checkmark"></span>
+                                                In English
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="lang" value="fr">
+                                                <span class="checkmark"></span>
+                                                In French
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="choose_plan_flex">
+                                        <div class="plan_cards">
+                                            <div class="tag">Popular choice</div>
+                                            <h2>CA $39.95</h2>
+                                            <p>Notarize with us & receive your letter for FREE!</p>
+                                            <ol class="order_list">
+                                                <li>Schedule your Notary Appointment</li>
+                                                <li>Discuss your affidavit with a case officer
+                                                    (anytime within 30 days of receipt)
+                                                </li>
+                                                <li>Number of revisions: 1</li>
+                                                <li>Personalisation level: Maximum</li>
+                                            </ol>
+                                            <a href="javascript:" class="btnPrimary">
+                                                Make Payment
+                                            </a>
+                                        </div>
+
+                                        <div class="plan_cards standard">
+                                            <div class="inner_flex">
+                                                <div class="contents">
+                                                    <div class="tag">Standard</div>
+                                                    <h2>CA $9.95</h2>
+                                                    <p>CA $9.95</p>
+                                                    <ol class="order_list">
+                                                        <li>Receive your completed affidavit in PDF format</li>
+                                                        <li>Personalisation level: Standard
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                                <a href="javascript:" class="btnPrimary">
+                                                    Make Payment
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="btn_wrap">
+                        <button class="btnPrimary" id="nextBtn">
+                            Save and continue
+                        </button>
+                        <button class="btnPrimary bordered" id="skipBtn">
+                            Skip this step for now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Payment Completed UI (Note:- Please remove D-NONE class from this div to Show the UI)-->
+                <div class="payment_completed_wrap d-none">
+                    <div class="contents">
+                        <div class="success">Success</div>
+                        <h3>Your payment is completed</h3>
+                        <p>Check your mail to receiver the PDF and proceed with the instructions</p>
+                        <div class="navigation_flex">
+                            <button class="btnPrimary">
+                                Make another letter
+                            </button>
+                            <button class="btnPrimary bordered">
+                                Homepage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer__wrapper">
+    <div class="container">
+        <div class="flex_top">
+            <a href="../index.html" class="brand">
+                <img src="../../assets/img/icons/brand-white.svg" alt="" />
+                <span>Travel consent letter</span>
+            </a>
+
+            <ul class="footer_nav_list">
+                <li>
+                    <a href="javascript:">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:">
+                        Create consent letter
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:">
+                        Help
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:">
+                        Contact us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex_bottom">
+            <p>Copyright Reserved 2025</p>
+            <ul class="terms_policy_list">
+                <li>
+                    <a href="javascript:">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:">
+                        Terms & Conditions
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+
+    <script>
+        const steps = document.querySelectorAll(".steps");
+        const stepIndicators = document.querySelectorAll(".step_list_wrap li");
+        const prevStepName = document.getElementById("prevStepName");
+        const stepNames = [
+            "Parents or Legal guardians",
+            "Travelling Child",
+            "Accompanying Person ( LEAVE BLANK IF CHILD IS TRAVELLING ALONE )",
+            "Contact info",
+            "Payment",
+        ];
+        let currentStep = 0;
+
+        const breadcrumb = document.getElementById("breadcrumb");
+        const backBtn = document.getElementById("backBtn");
+
+        function showStep(index) {
+            steps.forEach((step, i) => {
+                step.style.display = i === index ? "block" : "none";
+            });
+
+            stepIndicators.forEach((li, i) => {
+                li.classList.remove("done", "active");
+
+                if (i === index) {
+                    li.classList.add("done");
+                } else if (i < index) {
+                    li.classList.add("active");
+                }
+            });
+
+
+            if (index === 0) {
+                breadcrumb.style.display = "none";
+            } else {
+                breadcrumb.style.display = "flex";
+                prevStepName.textContent = stepNames[index];
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        showStep(currentStep);
+
+        document.getElementById("nextBtn").addEventListener("click", nextStep);
+        document.getElementById("skipBtn").addEventListener("click", nextStep);
+        backBtn.addEventListener("click", prevStep);
+    </script>
+
+    <script>
+        const radios = document.querySelectorAll('input[name="travelling-option"]');
+        const toggleDivs = document.querySelectorAll('.optionalFields');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                toggleDivs.forEach(div => {
+                    if (radio.value === 'yes') {
+                        div.classList.add('hide');
+                    } else {
+                        div.classList.remove('hide');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
