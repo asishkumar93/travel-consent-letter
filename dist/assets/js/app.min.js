@@ -83,15 +83,79 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const dobInput = document.getElementById("childDob");
+// Date Formate
+// const dobInput = document.getElementById("childDob");
 
-dobInput.addEventListener("input", (e) => {
-  let value = e.target.value.replace(/\D/g, ""); // only numbers
+// dobInput.addEventListener("input", (e) => {
+//   let value = e.target.value.replace(/\D/g, ""); // only numbers
+//   if (value.length > 2 && value.length <= 4) {
+//     value = value.slice(0, 2) + "/" + value.slice(2);
+//   } else if (value.length > 4) {
+//     value =
+//       value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4, 8);
+//   }
+//   e.target.value = value;
+// });
+
+function formatDateInput(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove non-digits
+
+  // Format as MM/DD/YYYY
   if (value.length > 2 && value.length <= 4) {
     value = value.slice(0, 2) + "/" + value.slice(2);
   } else if (value.length > 4) {
     value =
       value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4, 8);
   }
-  e.target.value = value;
+
+  input.value = value;
+
+  validateDate(input);
+}
+
+function validateDate(input) {
+  const parentContainer = input.closest(".fields_group");
+  const errorMsg = parentContainer.querySelector(".errorMsg");
+  const value = input.value;
+
+  // If field is empty, hide error
+  if (value.trim() === "") {
+    errorMsg.style.display = "none";
+    input.classList.remove("invalid");
+    return;
+  }
+
+  // Check if we have a complete date (MM/DD/YYYY format)
+  if (value.length === 10 && value.includes("/")) {
+    const parts = value.split("/");
+
+    if (parts.length === 3) {
+      const day = parseInt(parts[1], 10);
+      const month = parseInt(parts[0], 10);
+      const year = parseInt(parts[2], 10);
+
+      if (
+         day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2999
+      ) {
+        errorMsg.style.display = "inline";
+        input.classList.add("invalid");
+        return;
+      }
+    }
+  }
+
+  // If we reach here, the date is valid or incomplete (still typing)
+  errorMsg.style.display = "none";
+  input.classList.remove("invalid");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Find all elements with dateField class and add the formatting
+  const dateFields = document.querySelectorAll(".dateField");
+
+  dateFields.forEach(function (field) {
+    field.addEventListener("input", function (e) {
+      formatDateInput(e.target);
+    });
+  });
 });

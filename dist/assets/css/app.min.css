@@ -87,6 +87,18 @@ ul {
   padding: 0;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 button {
   border: 0;
   background: transparent;
@@ -679,6 +691,7 @@ button {
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
+  position: relative;
 }
 .fields_group label {
   font-size: 16px;
@@ -712,6 +725,18 @@ button {
 }
 .fields_group .fieldControl::placeholder {
   color: #616F86;
+}
+.fields_group .fieldControl.invalid {
+  border-color: red;
+}
+.fields_group .errorMsg {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
+  display: none;
+  position: absolute;
+  bottom: -22px;
 }
 
 .radio_toggle_wrap {
@@ -1160,7 +1185,7 @@ button {
   }
 }
 .travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .steps .fields_flex .fields_group {
-  width: calc(50% - 32px);
+  width: calc(50% - 22px);
 }
 @media screen and (max-width: 767px) {
   .travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .steps .fields_flex .fields_group {

@@ -160,14 +160,17 @@
 
                                     <div class="fields_group">
                                         <label for="">5. Parent contact telephone number</label>
-                                        <input type="text" name="telephone" id="telephone" class="fieldControl"
+                                        <input type="number" name="telephone" id="telephone" class="fieldControl"
                                             placeholder="Need content">
                                     </div>
 
                                     <div class="fields_group">
                                         <label for="">6. Parent contact email address</label>
                                         <input type="text" name="parentEmail" id="parentEmail" class="fieldControl"
-                                            placeholder="Need content">
+                                            placeholder="Need content" oninput="validateEmail(this)">
+                                        <span id="emailError" class="errorMsg">
+                                            Please enter a valid email address
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -183,8 +186,11 @@
 
                                     <div class="fields_group">
                                         <label for="">2. Child’s birth date</label>
-                                        <input type="text" name="childDob" id="childDob" class="fieldControl"
-                                            placeholder="DD/MM/YYYY">
+                                        <input type="text" name="childDob" id="childDob" class="fieldControl dateField"
+                                            placeholder="MM/DD/YYYY" maxlength="10">
+                                        <span class="errorMsg">
+                                            Please enter a valid date (MM/DD/YYYY)
+                                        </span>
                                     </div>
 
                                     <div class="fields_group">
@@ -201,8 +207,11 @@
 
                                     <div class="fields_group">
                                         <label for="">5. Issue date of child’s passport</label>
-                                        <input type="text" name="issueDate" id="issueDate" class="fieldControl"
-                                            placeholder="Need content">
+                                        <input type="text" name="issueDate" id="issueDate"
+                                            class="fieldControl dateField" placeholder="MM/DD/YYYY" maxlength="10">
+                                        <span class="errorMsg">
+                                            Please enter a valid date (MM/DD/YYYY)
+                                        </span>
                                     </div>
 
                                     <div class="fields_group">
@@ -214,7 +223,7 @@
 
                                     <div class="fields_group">
                                         <label for="">7. Child’s birth certificate number</label>
-                                        <input type="text" name="birthCertificateNumber" id="birthCertificateNumber"
+                                        <input type="number" name="birthCertificateNumber" id="birthCertificateNumber"
                                             class="fieldControl" placeholder="Need content">
                                     </div>
 
@@ -268,8 +277,11 @@
                                     <div class="fields_group optionalFields">
                                         <label for="">5. Issue date of the accompanying person’s passport</label>
                                         <input type="text" name="issueDateAccompanyingPerson"
-                                            id="issueDateAccompanyingPerson" class="fieldControl"
-                                            placeholder="Need content">
+                                            id="issueDateAccompanyingPerson" class="fieldControl dateField"
+                                            placeholder="MM/DD/YYYY" maxlength="10">
+                                        <span class="errorMsg">
+                                            Please enter a valid date (MM/DD/YYYY)
+                                        </span>
                                     </div>
 
                                     <div class="fields_group optionalFields">
@@ -282,7 +294,7 @@
 
                                     <div class="fields_group optionalFields">
                                         <label for="">7. Accompanying person’s birth certificate number</label>
-                                        <input type="text" name="accompanyingPersonBirthCertificateNumber"
+                                        <input type="number" name="accompanyingPersonBirthCertificateNumber"
                                             id="accompanyingPersonBirthCertificateNumber" class="fieldControl"
                                             placeholder="Need content">
                                     </div>
@@ -300,14 +312,20 @@
 
                                     <div class="fields_group">
                                         <label for="">2. Date of departure</label>
-                                        <input type="text" name="departureDate" id="departureDate" class="fieldControl"
-                                            placeholder="Need content">
+                                        <input type="text" name="departureDate" id="departureDate"
+                                            class="fieldControl dateField" placeholder="MM/DD/YYYY" maxlength="10">
+                                        <span class="errorMsg">
+                                            Please enter a valid date (MM/DD/YYYY)
+                                        </span>
                                     </div>
 
                                     <div class="fields_group">
                                         <label for="">3. Date of return</label>
-                                        <input type="text" name="returnDate" id="returnDate" class="fieldControl"
-                                            placeholder="Need content">
+                                        <input type="text" name="returnDate" id="returnDate"
+                                            class="fieldControl dateField" placeholder="MM/DD/YYYY" maxlength="10">
+                                        <span class="errorMsg">
+                                            Please enter a valid date (MM/DD/YYYY)
+                                        </span>
                                     </div>
 
                                     <div class="fields_group">
@@ -324,14 +342,17 @@
 
                                     <div class="fields_group">
                                         <label for="">6. Contact telephone number</label>
-                                        <input type="text" name="contactNumber" id="contactNumber" class="fieldControl"
-                                            placeholder="Need content">
+                                        <input type="number" name="contactNumber" id="contactNumber"
+                                            class="fieldControl" placeholder="Need content">
                                     </div>
 
                                     <div class="fields_group">
-                                        <label for="">6. Contact email address</label>
+                                        <label for="contactEmail">6. Contact email address</label>
                                         <input type="text" name="contactEmail" id="contactEmail" class="fieldControl"
-                                            placeholder="Need content">
+                                            placeholder="Need content" oninput="validateEmail(this)">
+                                        <span id="emailError" class="errorMsg">
+                                            Please enter a valid email address
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -487,6 +508,7 @@
         const steps = document.querySelectorAll(".steps");
         const stepIndicators = document.querySelectorAll(".step_list_wrap li");
         const prevStepName = document.getElementById("prevStepName");
+        const skipBtn = document.getElementById("skipBtn");
         const stepNames = [
             "Parents or Legal guardians",
             "Travelling Child",
@@ -508,8 +530,10 @@
                 li.classList.remove("done", "active");
 
                 if (i === index) {
+                    // current step
                     li.classList.add("done");
                 } else if (i < index) {
+                    // previous steps
                     li.classList.add("active");
                 }
             });
@@ -528,14 +552,27 @@
                 currentStep++;
                 showStep(currentStep);
             }
+            toggleSkipBtn();
         }
+
 
         function prevStep() {
             if (currentStep > 0) {
                 currentStep--;
                 showStep(currentStep);
             }
+            toggleSkipBtn();
         }
+
+        function toggleSkipBtn() {
+            if (currentStep === steps.length - 1) {
+                skipBtn.style.display = "none";
+            } else {
+                skipBtn.style.display = "inline-block";
+            }
+        }
+
+        toggleSkipBtn();
 
         showStep(currentStep);
 
@@ -564,6 +601,30 @@
         });
     </script>
 
+    <script>
+        function validateEmail(input) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            const parentContainer = input.closest('.fields_group');
+            const errorMsg = parentContainer.querySelector('.errorMsg');
+
+            // If field is empty, hide error
+            if (input.value.trim() === "") {
+                errorMsg.style.display = "none";
+                input.classList.remove("invalid");
+                return;
+            }
+
+            // Validate email pattern
+            if (!emailPattern.test(input.value.trim())) {
+                errorMsg.style.display = "inline";
+                input.classList.add("invalid");
+            } else {
+                errorMsg.style.display = "none";
+                input.classList.remove("invalid");
+            }
+        }
+    </script>
 
 </body>
 
