@@ -120,16 +120,23 @@
 
                         <div class="col-12 col-md-6 col-lg-6 offset-lg-1">
                             <div class="contact_form">
-                                <form action="">
+                                <form action="" id="contact-form">
                                     <div class="fields_group">
                                         <label for="">1. Name</label>
                                         <input type="text" name="name" id="name" class="fieldControl"
                                             placeholder="Enter your name">
+
+                                        <div class="errorText" id="nameError">
+                                            Please enter your name
+                                        </div>
                                     </div>
                                     <div class="fields_group">
                                         <label for="">2. Email</label>
                                         <input type="text" name="email" id="email" class="fieldControl"
                                             placeholder="Enter your email">
+                                        <div class="errorText" id="emailError">
+                                            Please enter your email
+                                        </div>
                                     </div>
 
                                     <div class="fields_group">
@@ -143,6 +150,9 @@
                                         Submit
                                     </button>
                                 </form>
+                                <div id="thankyou" class="thankyouText">
+                                    Thank you! Your message has been submitted.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -257,6 +267,65 @@
             },
         });
     </script>
+
+    <script>
+        const form = document.getElementById("contact-form");
+        const nameField = document.getElementById("name");
+        const emailField = document.getElementById("email");
+        const thankyouMsg = document.getElementById("thankyou");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+
+        // Regex patterns
+        const nameRegex = /^[a-zA-Z\s]{2,50}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Live validation on input
+        nameField.addEventListener("input", () => {
+            if (nameRegex.test(nameField.value.trim())) {
+                nameError.style.display = "none";
+            }
+        });
+
+        emailField.addEventListener("input", () => {
+            if (emailRegex.test(emailField.value.trim())) {
+                emailError.style.display = "none";
+            }
+        });
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let valid = true;
+
+            // Validate name
+            if (!nameRegex.test(nameField.value.trim())) {
+                nameError.style.display = "block";
+                valid = false;
+            } else {
+                nameError.style.display = "none";
+            }
+
+            // Validate email
+            if (!emailRegex.test(emailField.value.trim())) {
+                emailError.style.display = "block";
+                valid = false;
+            } else {
+                emailError.style.display = "none";
+            }
+
+            if (valid) {
+                form.reset();
+                thankyouMsg.style.display = "block";
+
+                setTimeout(() => {
+                    thankyouMsg.style.display = "none";
+                }, 3000);
+            }
+        });
+    </script>
+
 
 </body>
 
