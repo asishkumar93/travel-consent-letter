@@ -22,49 +22,40 @@
       <div class="swiper mySwiper tagLineSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
-          </div>
-          <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
-          </div>
-          <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
-          </div>
-          <div class="swiper-slide">
             <p>When you Notarize with us</p>
           </div>
           <div class="swiper-slide">
-            <p>FREE CONSENT LETTER</p>
+            <p>When you Notarize with us</p>
           </div>
         </div>
       </div>
@@ -90,6 +81,46 @@
         <div class="img">
           <img src="../assets/img/home/hero-image.png" class="bg" alt="Hero banner" />
           <img src="../assets/img/home/logo.svg" class="logo" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="our__customer__wrapper">
+      <div class="container">
+        <div class="title_wrap">
+          <h2 class="title40">Top value for our customer</h2>
+          <p class="subTitle">Create and share travel consent forms in minutes safe, <br />
+            simple, stress-free.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-6 col-md-3 col-lg-3">
+            <div class="card_customer">
+              <img src="../assets/img/icons/1.svg" alt="" />
+              <p>Trusted by many customers</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 col-lg-3">
+            <div class="card_customer">
+              <img src="../assets/img/icons/2.svg" alt="" />
+              <p>Made process easy and seamless </p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 col-lg-3">
+            <div class="card_customer">
+              <img src="../assets/img/icons/3.svg" alt="" />
+              <p>FREE letter, if you notarize with us</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 col-lg-3">
+            <div class="card_customer">
+              <img src="../assets/img/icons/4.svg" alt="" />
+              <p>Safe and secure with multiple layers</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -163,7 +194,7 @@
 
                   <div class="fields_group">
                     <label for="">3. Name of the second parent / legal guardian giving the authority (if
-                      applicable)</label>
+                      applicable)?</label>
                     <input type="text" name="secondParrent" id="secondParrent" class="fieldControl"
                       placeholder="Need content">
                   </div>
@@ -201,9 +232,9 @@
                   <div class="fields_group">
                     <label for="">2. Child’s birth date</label>
                     <input type="text" name="childDob" id="childDob" class="fieldControl dateField"
-                      placeholder="MM/DD/YYYY" maxlength="10">
+                      placeholder="DD/MM/YYYY" maxlength="10">
                     <span class="errorMsg">
-                      Please enter a valid date (MM/DD/YYYY)
+                      Please enter a valid date (DD/MM/YYYY)
                     </span>
                   </div>
 
@@ -215,15 +246,16 @@
 
                   <div class="fields_group">
                     <label for="">4. Child’s passport number</label>
-                    <input type="text" name="passport" id="passport" class="fieldControl" placeholder="AASDAS98423">
+                    <input type="text" name="passport" id="passport" class="fieldControl passport"
+                      placeholder="AASDAS98423">
                   </div>
 
                   <div class="fields_group">
                     <label for="">5. Issue date of child’s passport</label>
                     <input type="text" name="issueDate" id="issueDate" class="fieldControl dateField"
-                      placeholder="MM/DD/YYYY" maxlength="10">
+                      placeholder="DD/MM/YYYY" maxlength="10">
                     <span class="errorMsg">
-                      Please enter a valid date (MM/DD/YYYY)
+                      Please enter a valid date (DD/MM/YYYY)
                     </span>
                   </div>
 
@@ -241,8 +273,8 @@
 
                   <div class="fields_group">
                     <label for="">8. Country where child’s passport was issued</label>
-                    <input type="text" name="countryPassportIssue" id="countryPassportIssue" class="fieldControl"
-                      placeholder="Need content">
+                    <input type="text" name="countryPassportIssue" id="countryPassportIssue"
+                      class="fieldControl onlyLetters" placeholder="Need content">
                   </div>
                 </div>
               </div>
@@ -281,16 +313,16 @@
 
                   <div class="fields_group optionalFields">
                     <label for="">4. Passport number of the accompanying person?</label>
-                    <input type="text" name="accompanyingPerson" id="accompanyingPerson" class="fieldControl"
+                    <input type="text" name="accompanyingPerson" id="accompanyingPerson" class="fieldControl passport"
                       placeholder="Need content">
                   </div>
 
                   <div class="fields_group optionalFields">
                     <label for="">5. Issue date of the accompanying person’s passport</label>
                     <input type="text" name="issueDateAccompanyingPerson" id="issueDateAccompanyingPerson"
-                      class="fieldControl dateField" placeholder="MM/DD/YYYY" maxlength="10">
-                        <span class="errorMsg">
-                      Please enter a valid date (MM/DD/YYYY)
+                      class="fieldControl dateField" placeholder="DD/MM/YYYY" maxlength="10">
+                    <span class="errorMsg">
+                      Please enter a valid date (DD/MM/YYYY)
                     </span>
                   </div>
 
@@ -313,32 +345,32 @@
                 <div class="fields_flex">
                   <div class="fields_group">
                     <label for="">1. Name of destination country</label>
-                    <input type="text" name="destinationCountry" id="destinationCountry" class="fieldControl"
-                      placeholder="Need content">
+                    <input type="text" name="destinationCountry" id="destinationCountry"
+                      class="fieldControl onlyLetters" placeholder="Need content">
                   </div>
 
                   <div class="fields_group">
                     <label for="">2. Date of departure</label>
                     <input type="text" name="departureDate" id="departureDate" class="fieldControl dateField"
-                      placeholder="MM/DD/YYYY" maxlength="10">
+                      placeholder="DD/MM/YYYY" maxlength="10">
                     <span class="errorMsg">
-                      Please enter a valid date (MM/DD/YYYY)
+                      Please enter a valid date (DD/MM/YYYY)
                     </span>
                   </div>
 
                   <div class="fields_group">
                     <label for="">3. Date of return</label>
                     <input type="text" name="returnDate" id="returnDate" class="fieldControl dateField"
-                      placeholder="MM/DD/YYYY" maxlength="10">
-                        <span class="errorMsg">
-                      Please enter a valid date (MM/DD/YYYY)
+                      placeholder="DD/MM/YYYY" maxlength="10">
+                    <span class="errorMsg">
+                      Please enter a valid date (DD/MM/YYYY)
                     </span>
                   </div>
 
                   <div class="fields_group">
                     <label for="">4. Name of person child is staying with</label>
-                    <input type="text" name="personChildStaying" id="personChildStaying" class="fieldControl"
-                      placeholder="Need content">
+                    <input type="text" name="personChildStaying" id="personChildStaying"
+                      class="fieldControl onlyLetters" placeholder="Need content">
                   </div>
 
                   <div class="fields_group">
@@ -370,7 +402,7 @@
                   <div class="fields_group">
                     <label for="">1. Select the languages you want the letter to be in</label>
 
-                    <div class="custom_checkbox">
+                    <!-- <div class="custom_checkbox">
                       <label>
                         <input type="checkbox" name="lang" value="en">
                         <span class="checkmark"></span>
@@ -381,7 +413,14 @@
                         <span class="checkmark"></span>
                         In French
                       </label>
-                    </div>
+                    </div> -->
+
+                    <select class="form-select" aria-label="Select language">
+                      <option selected>Select language</option>
+                      <option value="1">English to french</option>
+                      <option value="2">English to russian</option>
+                      <option value="3">English to spanish</option>
+                    </select>
                   </div>
 
                   <div class="choose_plan_flex">
@@ -448,46 +487,6 @@
               <button class="btnPrimary bordered">
                 Homepage
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="our__customer__wrapper">
-      <div class="container">
-        <div class="title_wrap">
-          <h2 class="title40">Top value for our customer</h2>
-          <p class="subTitle">Create and share travel consent forms in minutes safe, <br />
-            simple, stress-free.</p>
-        </div>
-
-        <div class="row gy-4">
-          <div class="col-6 col-md-3 col-lg-3">
-            <div class="card_customer">
-              <img src="../assets/img/icons/1.svg" alt="" />
-              <p>Trusted by many customers</p>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3 col-lg-3">
-            <div class="card_customer">
-              <img src="../assets/img/icons/1.svg" alt="" />
-              <p>Made process easy and seamless </p>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3 col-lg-3">
-            <div class="card_customer">
-              <img src="../assets/img/icons/1.svg" alt="" />
-              <p>FREE letter, if you notarize with us</p>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3 col-lg-3">
-            <div class="card_customer">
-              <img src="../assets/img/icons/1.svg" alt="" />
-              <p>Safe and secure with multiple layers</p>
             </div>
           </div>
         </div>
@@ -722,6 +721,48 @@
         input.classList.remove("invalid");
       }
     }
+  </script>
+
+  <!-- Number input fields 15 -->
+  <script>
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    const maxLength = 15;
+
+    numberInputs.forEach(input => {
+      input.addEventListener("input", function () {
+        if (this.value.length > maxLength) {
+          this.value = this.value.slice(0, maxLength); // Trim extra digits
+        }
+      });
+    });
+  </script>
+
+  <!-- Number input fields 25 -->
+  <script>
+    const passportInputs = document.querySelectorAll('.passport');
+    const maxLengthpassport = 25;
+
+    passportInputs.forEach(input => {
+      input.addEventListener("input", function () {
+        if (this.value.length > maxLengthpassport) {
+          this.value = this.value.slice(0, maxLengthpassport); // Trim extra digits
+        }
+      });
+    });
+  </script>
+
+  <!-- Only Letters are allowed -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const letterInputs = document.querySelectorAll('input.onlyLetters');
+
+      letterInputs.forEach(function (input) {
+        input.addEventListener("input", function () {
+          this.value = this.value.replace(/[^a-zA-Z\s]/g, "");
+          // allows only letters and spaces
+        });
+      });
+    });
   </script>
 
 </body>

@@ -48,7 +48,7 @@
                     width: 16px;
                     height: 16px;
                     border-radius: 50%;
-                    border: 2px solid #000;
+                    border: 2px solid rgba(0, 0, 0, 0.5);
                     position: relative;
 
                     @media screen and (max-width:991px) {
@@ -62,7 +62,7 @@
                     font-size: 16px;
                     font-weight: 500;
                     line-height: 130%;
-                    color: #000;
+                    color: rgba(0, 0, 0, 0.5);
                 }
 
                 &.done {
@@ -82,6 +82,10 @@
                             margin: auto;
                             border-radius: 50%;
                         }
+                    }
+
+                    .text {
+                        color: #000;
                     }
                 }
 
@@ -105,6 +109,10 @@
                             border-width: 0 2px 2px 0;
                             transform: rotate(45deg);
                         }
+                    }
+
+                    .text {
+                        color: #000;
                     }
                 }
             }
@@ -225,10 +233,13 @@
             }
 
             .optionalFields {
-              input:disabled {
-                background: #c3c3c3;
-                border: 1px solid #c3c3c3;
-              }
+                input:disabled {
+                    border: 1px solid rgba(224, 224, 224, 0.5);
+
+                    &::placeholder {
+                        color: rgba(97, 111, 134, 0.5);
+                    }
+                }
             }
         }
 

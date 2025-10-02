@@ -146,7 +146,6 @@
                                     </div>
 
                                     <button type="submit" class="btnPrimary">
-                                        <img src="../assets/img/contact/arrow.svg" alt="" />
                                         Submit
                                     </button>
                                 </form>
@@ -323,6 +322,20 @@
                     thankyouMsg.style.display = "none";
                 }, 3000);
             }
+        });
+    </script>
+
+    <script>
+        // Select all number input fields
+        const messageInputs = document.querySelectorAll('textarea[name="message"]');
+        const maxLengthmessage = 200;
+
+        messageInputs.forEach(input => {
+            input.addEventListener("input", function () {
+                if (this.value.length > maxLengthmessage) {
+                    this.value = this.value.slice(0, maxLengthmessage); // Trim extra digits
+                }
+            });
         });
     </script>
 

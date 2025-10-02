@@ -860,6 +860,20 @@ button {
   transform: rotate(45deg);
 }
 
+.form-select {
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #000;
+  border: 1px solid #000;
+}
+.form-select:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #000;
+}
+
 .tagLine__swiper__wrapper {
   background: #9C3E2C;
   padding: 12px 0;
@@ -894,11 +908,11 @@ button {
 }
 
 .hero__banner__wrapper {
-  padding: 80px 0;
+  padding: 80px 0 40px 0;
 }
 @media screen and (max-width: 991px) {
   .hero__banner__wrapper {
-    padding: 56px 0;
+    padding: 40px 0 0 0;
   }
 }
 .hero__banner__wrapper .title48 div {
@@ -907,11 +921,11 @@ button {
 }
 .hero__banner__wrapper .title48 div::before {
   content: "";
-  background: #000;
-  height: 2px;
-  width: 100%;
+  background-image: url("../../../assets/img/icons/wave-line.svg");
+  height: 10px;
+  width: 109px;
   position: absolute;
-  bottom: 6px;
+  bottom: 0;
   left: 0;
 }
 .hero__banner__wrapper .img {
@@ -945,11 +959,11 @@ button {
 }
 
 .our__customer__wrapper {
-  padding-bottom: 80px;
+  padding: 80px 0;
 }
 @media screen and (max-width: 991px) {
   .our__customer__wrapper {
-    padding-bottom: 56px;
+    padding: 56px 0;
   }
 }
 .our__customer__wrapper .title_wrap {
@@ -968,6 +982,11 @@ button {
   -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 56px;
+}
+@media screen and (max-width: 767px) {
+  .our__customer__wrapper .title_wrap {
+    margin-bottom: 32px;
+  }
 }
 .our__customer__wrapper .title_wrap .title40 {
   margin-bottom: 8px;
@@ -1105,7 +1124,7 @@ button {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 2px solid rgba(0, 0, 0, 0.5);
   position: relative;
 }
 @media screen and (max-width: 991px) {
@@ -1119,7 +1138,7 @@ button {
   font-size: 16px;
   font-weight: 500;
   line-height: 130%;
-  color: #000;
+  color: rgba(0, 0, 0, 0.5);
 }
 .travel__consent__wrapper .consent_main_wrap .step_list_wrap li.done .circle {
   border: 2px solid #9C3E2C;
@@ -1136,6 +1155,9 @@ button {
   bottom: 0;
   margin: auto;
   border-radius: 50%;
+}
+.travel__consent__wrapper .consent_main_wrap .step_list_wrap li.done .text {
+  color: #000;
 }
 .travel__consent__wrapper .consent_main_wrap .step_list_wrap li.active .circle {
   background: #009C2A;
@@ -1156,6 +1178,9 @@ button {
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.travel__consent__wrapper .consent_main_wrap .step_list_wrap li.active .text {
+  color: #000;
 }
 .travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap {
   padding: 24px;
@@ -1285,8 +1310,22 @@ button {
   color: #000;
 }
 .travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled {
-  background: #c3c3c3;
-  border: 1px solid #c3c3c3;
+  border: 1px solid rgba(224, 224, 224, 0.5);
+}
+.travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled::-webkit-input-placeholder {
+  color: rgba(97, 111, 134, 0.5);
+}
+.travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled::-moz-placeholder {
+  color: rgba(97, 111, 134, 0.5);
+}
+.travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled:-ms-input-placeholder {
+  color: rgba(97, 111, 134, 0.5);
+}
+.travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled::-ms-input-placeholder {
+  color: rgba(97, 111, 134, 0.5);
+}
+.travel__consent__wrapper .consent_main_wrap .steps_group_main_wrap .optionalFields input:disabled::placeholder {
+  color: rgba(97, 111, 134, 0.5);
 }
 .travel__consent__wrapper .consent_main_wrap .btn_wrap {
   padding: 24px 40px;
@@ -1390,11 +1429,11 @@ button {
 }
 
 .contact__us__wrapper {
-  padding: 80px 0 0 0;
+  padding: 80px 0;
 }
 @media screen and (max-width: 767px) {
   .contact__us__wrapper {
-    padding: 40px 0 0 0;
+    padding: 56px 0;
   }
 }
 .contact__us__wrapper figure img {
@@ -1402,7 +1441,7 @@ button {
   height: 100%;
 }
 .contact__us__wrapper .contents {
-  padding: 40px 0 56px 0;
+  padding: 40px 0 0 0;
 }
 .contact__us__wrapper .contents .tagInfo {
   display: -webkit-box;

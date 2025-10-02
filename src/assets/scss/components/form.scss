@@ -154,3 +154,16 @@
         }
     }
 }
+
+.form-select {
+    max-width: 200px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    color: #000;
+    border: 1px solid #000;
+    &:focus {
+        box-shadow: none;
+        border-color: #000;
+    }
+}

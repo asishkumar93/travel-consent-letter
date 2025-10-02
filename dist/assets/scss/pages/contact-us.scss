@@ -1,8 +1,8 @@
 .contact__us__wrapper {
-    padding: 80px 0 0 0;
+    padding: 80px 0;
 
     @media screen and (max-width:767px) {
-        padding: 40px 0 0 0;
+        padding: 56px  0;
     }
 
     figure {
@@ -13,7 +13,7 @@
     }
 
     .contents {
-        padding: 40px 0 56px 0;
+        padding: 40px 0 0 0;
 
         .tagInfo {
             display: flex;
